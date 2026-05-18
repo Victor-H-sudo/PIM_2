@@ -34,6 +34,8 @@ namespace EcoPoint.Controllers
             }
 
             HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
+            HttpContext.Session.SetInt32("UsuarioId", usuario.Id);
+            HttpContext.Session.SetString("UsuarioEmail", usuario.Email);
             HttpContext.Session.SetString("TipoUsuario", usuario.TipoUsuario);
 
             if (usuario.TipoUsuario == "Admin")

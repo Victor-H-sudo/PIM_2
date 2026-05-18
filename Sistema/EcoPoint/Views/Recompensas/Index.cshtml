@@ -1,4 +1,4 @@
-@model IEnumerable<EcoPoint.Models.Ecoponto>
+@model IEnumerable<EcoPoint.Models.Recompensa>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,15 +16,11 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CNPJ)
+                @Html.DisplayNameFor(model => model.Descricao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Endereco)
+                @Html.DisplayNameFor(model => model.PontosNecessarios)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LinkMaps)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -34,13 +30,10 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CNPJ)
+                @Html.DisplayFor(modelItem => item.Descricao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Endereco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LinkMaps)
+                @Html.DisplayFor(modelItem => item.PontosNecessarios)
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

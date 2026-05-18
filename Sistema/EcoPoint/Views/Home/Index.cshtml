@@ -1,8 +1,72 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+
+    <div class="card shadow p-4 mb-4"
+         style="background-color:#F1FAEE; border-radius:20px;">
+
+        <h2 style="color:#1D3557;">Bem-vindo ao EcoPoint</h2>
+
+        <p style="color:#333;">
+            Acesse rapidamente as principais áreas do sistema.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a asp-controller="Usuarios"
+               asp-action="Ranking"
+               class="btn w-100 p-4"
+               style="background-color:#2A9D8F; color:white; border-radius:18px; justify-content: center;">
+                🏆 Ranking
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a asp-controller="Recompensas"
+               asp-action="Loja"
+               class="btn w-100 p-4"
+               style="background-color:#1D3557; color:white; border-radius:18px; justify-content:center;">
+                🎁 Recompensas
+            </a>
+        </div>
+
+        @if (Context.Session.GetString("TipoUsuario") == "Empresa"
+          || Context.Session.GetString("TipoUsuario") == "Admin")
+        {
+            <div class="col-md-4 mb-3">
+                <a asp-controller="Reciclagens"
+                   asp-action="Index"
+                   class="btn w-100 p-4"
+                   style="background-color:#457B9D; color:white; border-radius:18px;">
+                    ♻ Reciclagens
+                </a>
+            </div>
+        }
+
+        @if (Context.Session.GetString("TipoUsuario") == "Admin")
+        {
+            <div class="col-md-4 mb-3">
+                <a asp-controller="Usuarios"
+                   asp-action="Index"
+                   class="btn w-100 p-4"
+                   style="background-color:#E9C46A; color:#1D3557; border-radius:18px;">
+                    👑 Painel Admin
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <a asp-controller="Recompensas"
+                   asp-action="Index"
+                   class="btn w-100 p-4"
+                   style="background-color:#F4A261; color:white; border-radius:18px;">
+                    ⚙ Gerenciar Recompensas
+                </a>
+            </div>
+        }
+
+    </div>
+
 </div>

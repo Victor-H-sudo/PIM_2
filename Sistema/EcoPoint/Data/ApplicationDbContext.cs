@@ -12,19 +12,13 @@ namespace EcoPoint.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Reciclagem> Reciclagens { get; set; }
+
         public DbSet<Ecoponto> Ecopontos { get; set; }
 
         public DbSet<TipoMaterial> TiposMaterial { get; set; }
 
-        public DbSet<Reciclagem> Reciclagens { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Reciclagem>()
-                .Property(r => r.Peso)
-                .HasPrecision(10, 2);
-        }
+        public DbSet<Recompensa> Recompensas { get; set; }
+        public DbSet<Resgate> Resgates { get; set; }
     }
 }

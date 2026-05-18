@@ -65,57 +65,6 @@ namespace EcoPoint.Controllers
             return View(ecoponto);
         }
 
-        // GET: Ecopontos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var ecoponto = await _context.Ecopontos.FindAsync(id);
-            if (ecoponto == null)
-            {
-                return NotFound();
-            }
-            return View(ecoponto);
-        }
-
-        // POST: Ecopontos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,CNPJ,Endereco,Email,Senha,LinkMaps")] Ecoponto ecoponto)
-        {
-            if (id != ecoponto.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(ecoponto);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!EcopontoExists(ecoponto.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(ecoponto);
-        }
-
         // GET: Ecopontos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -146,6 +95,10 @@ namespace EcoPoint.Controllers
             }
 
             await _context.SaveChangesAsync();
+            _context.SaveChanges();
+
+            TempData["Sucesso"] = "Ecoponto alterado com sucesso!";
+
             return RedirectToAction(nameof(Index));
         }
 

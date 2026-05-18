@@ -1,0 +1,63 @@
+@model EcoPoint.Models.Usuario
+
+@{
+    ViewData["Title"] = "Cadastrar Empresa";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4"
+         style="border-radius:20px; background-color:#F1FAEE;">
+
+        <h2 class="mb-4"
+            style="color:#1D3557;">
+            Cadastrar Empresa
+        </h2>
+
+        <form asp-action="CriarEmpresa" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Nome da Empresa</label>
+
+                <input asp-for="Nome"
+                       class="form-control"
+                       style="border-radius:12px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">CNPJ</label>
+
+                <input asp-for="CPF"
+                       class="form-control"
+                       style="border-radius:12px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+
+                <input asp-for="Email"
+                       class="form-control"
+                       style="border-radius:12px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+
+                <input asp-for="Senha"
+                       type="password"
+                       class="form-control"
+                       style="border-radius:12px;" />
+            </div>
+            <div>
+            <button type="submit"
+                    class="btn btn-success w-100"
+                    style="border-radius:12px;">
+                Cadastrar Empresa
+            </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

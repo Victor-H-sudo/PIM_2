@@ -1,87 +1,154 @@
-﻿@using Microsoft.AspNetCore.Http
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>@ViewData["Title"] - EcoPoint</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/EcoPoint.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
 </head>
-<body>
+
+<body style="background-color:#F4F1EA;">
+
     <header>
-        <ul class="navbar-nav flex-grow-1">
+        <nav class="navbar navbar-expand-sm navbar-dark shadow-sm"
+             style="background-color:#1D3557;">
 
-    @if (Context.Session.GetString("TipoUsuario") == "Admin")
-    {
-        <li class="nav-item">
-            <a class="nav-link text-light"
-               asp-controller="Usuarios"
-               asp-action="Index">
-               Usuários
-            </a>
-        </li>
+            <div class="container-fluid">
 
-        <li class="nav-item">
-            <a class="nav-link text-light"
-               asp-controller="Ecopontos"
-               asp-action="Index">
-               Ecopontos
-            </a>
-        </li>
-    }
+                <a class="navbar-brand fw-bold text-white"
+                   asp-controller="Home"
+                   asp-action="Index">
+                    ECOPOINT
+                </a>
 
-    @if (Context.Session.GetString("TipoUsuario") == "Empresa")
-    {
-        <li class="nav-item">
-            <a class="nav-link text-light"
-               asp-controller="Reciclagens"
-               asp-action="Index">
-               Reciclagens
-            </a>
-        </li>
-    }
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target=".navbar-collapse">
 
-    @if (Context.Session.GetString("TipoUsuario") == "Usuario")
-    {
-        <li class="nav-item">
-            <a class="nav-link text-light"
-               asp-controller="Usuarios"
-               asp-action="Ranking">
-               Ranking
-            </a>
-        </li>
-    }
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    @if (Context.Session.GetString("UsuarioNome") != null)
-    {
-        <li class="nav-item">
-            <a class="nav-link text-light"
-               asp-controller="Login"
-               asp-action="Logout">
-               Sair
-            </a>
-        </li>
-    }
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
 
-</ul>
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                               asp-controller="Home"
+                               asp-action="Index">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                               asp-controller="Usuarios"
+                               asp-action="Ranking">
+                                Ranking
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                               asp-controller="Recompensas"
+                               asp-action="Loja">
+                                Recompensas
+                            </a>
+                        </li>
+
+                        @if (Context.Session.GetString("TipoUsuario") == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-warning fw-bold"
+                                   asp-controller="Usuarios"
+                                   asp-action="Index">
+                                    Painel Admin
+                                </a>
+                            </li>
+                        }
+
+                        @if (Context.Session.GetString("TipoUsuario") == "Empresa"
+                        || Context.Session.GetString("TipoUsuario") == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-success fw-bold"
+                                   asp-controller="Reciclagens"
+                                   asp-action="Index">
+                                    Reciclagens
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+
+                    <ul class="navbar-nav">
+
+                        @if (Context.Session.GetString("UsuarioNome") != null)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-light">
+                                    👤 @Context.Session.GetString("UsuarioNome")
+                                </span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-danger"
+                                   asp-controller="Login"
+                                   asp-action="Logout">
+                                    Sair
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light"
+                                   asp-controller="Login"
+                                   asp-action="Index">
+                                    Login
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
     </header>
-    <div class="container">
+
+    <div class="container mt-4">
         <main role="main" class="pb-3">
             @RenderBody()
+            @if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success text-center mt-3">
+        @TempData["Sucesso"]
+    </div>
+}
+
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger text-center mt-3">
+        @TempData["Erro"]
+    </div>
+}
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - EcoPoint - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

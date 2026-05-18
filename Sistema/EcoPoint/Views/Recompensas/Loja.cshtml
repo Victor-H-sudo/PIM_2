@@ -1,0 +1,84 @@
+@model IEnumerable<EcoPoint.Models.Recompensa>
+
+<h1>TESTE LOJA</h1>
+@{
+    ViewData["Title"] = "Recompensas";
+}
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Erro"]
+    </div>
+}
+
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Sucesso"]
+    </div>
+}
+
+<h2 class="text-white mb-4">🎁 Recompensas</h2>
+
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Erro"]
+    </div>
+}
+
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Sucesso"]
+    </div>
+}
+
+<div class="row">
+@foreach (var item in Model)
+{
+    var isGela = item.Nome == "Chaveiro Gela";
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow" style="border-radius:20px; background-color:#F1FAEE;">
+            <div class="card-body text-center">
+
+                @if (isGela)
+                {
+                    <div style="width:80px; height:80px; border-radius:50%; background:#ff1493; color:#ffeb3b; display:flex; align-items:center; justify-content:center; font-size:36px; margin:0 auto 15px auto; font-weight:bold;">
+                        G
+                    </div>
+                }
+                else
+                {
+                    <div style="font-size:40px; margin-bottom:15px;">
+                        🎁
+                    </div>
+                }
+
+                <h4 style="color:#1D3557;">
+                    @item.Nome
+                </h4>
+
+                <p style="color:#333;">
+                    @item.Descricao
+                </p>
+
+                <h5 style="color:#2A9D8F;">
+                    @item.PontosNecessarios pontos
+                </h5>
+            </div>
+
+            <div class="card-footer bg-transparent border-0">
+                <a asp-controller="Recompensas"
+                asp-action="Resgatar"
+                asp-route-id="@item.Id"
+                class="btn w-100"
+                style="background-color:#2A9D8F; color:white; border-radius:12px;">
+                    RESGATAR
+                </a>
+            </div>
+        </div>
+    </div>
+}
+</div>

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using EcoPoint.Data;
 using EcoPoint.Models;
 
@@ -14,28 +15,20 @@ namespace EcoPoint.Controllers
             _context = context;
         }
 
-        // =========================
-        // VERIFICAÇÕES DE SESSÃO
-        // =========================
-
         private bool UsuarioLogado()
         {
             return HttpContext.Session.GetString("UsuarioNome") != null;
         }
 
-        private bool AdminLogado()
+        private bool Admin()
         {
             return HttpContext.Session.GetString("TipoUsuario") == "Admin";
         }
 
-        // =========================
-        // LISTA DE USUÁRIOS (ADMIN)
-        // =========================
-
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            if (!AdminLogado())
+            if (!UsuarioLogado())
             {
                 return RedirectToAction("Index", "Login");
             }
@@ -43,14 +36,10 @@ namespace EcoPoint.Controllers
             return View(await _context.Usuarios.ToListAsync());
         }
 
-        // =========================
-        // DETALHES (ADMIN)
-        // =========================
-
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (!AdminLogado())
+            if (!UsuarioLogado())
             {
                 return RedirectToAction("Index", "Login");
             }
@@ -71,16 +60,12 @@ namespace EcoPoint.Controllers
             return View(usuario);
         }
 
-        // =========================
-        // CREATE (ADMIN)
-        // =========================
-
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            if (!AdminLogado())
+            if (!Admin())
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Home");
             }
 
             return View();
@@ -89,11 +74,13 @@ namespace EcoPoint.Controllers
         // POST: Usuarios/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,CPF,Email,Senha,Pontos,DataCadastro,TipoUsuario")] Usuario usuario)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Nome,CPF,Email,Senha,Pontos,DataCadastro,TipoUsuario")]
+            Usuario usuario)
         {
-            if (!AdminLogado())
+            if (!Admin())
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Home");
             }
 
             if (ModelState.IsValid)
@@ -102,90 +89,20 @@ namespace EcoPoint.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(usuario);
-        }
-
-        // =========================
-        // EDIT (ADMIN)
-        // =========================
-
-        // GET: Usuarios/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (!AdminLogado())
-            {
-                return RedirectToAction("Index", "Login");
-            }
-
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var usuario = await _context.Usuarios.FindAsync(id);
-
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-
-            return View(usuario);
-        }
-
-        // POST: Usuarios/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,CPF,Email,Senha,Pontos,DataCadastro,TipoUsuario")] Usuario usuario)
-        {
-            if (!AdminLogado())
-            {
-                return RedirectToAction("Index", "Login");
-            }
-
-            if (id != usuario.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(usuario);
-
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UsuarioExists(usuario.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                TempData["Sucesso"] = "Usuário criado com sucesso!";
 
                 return RedirectToAction(nameof(Index));
             }
 
             return View(usuario);
         }
-
-        // =========================
-        // DELETE (ADMIN)
-        // =========================
 
         // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (!AdminLogado())
+            if (!Admin())
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Home");
             }
 
             if (id == null)
@@ -209,9 +126,9 @@ namespace EcoPoint.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (!AdminLogado())
+            if (!Admin())
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Home");
             }
 
             var usuario = await _context.Usuarios.FindAsync(id);
@@ -223,13 +140,12 @@ namespace EcoPoint.Controllers
 
             await _context.SaveChangesAsync();
 
+            TempData["Sucesso"] = "Usuário removido com sucesso!";
+
             return RedirectToAction(nameof(Index));
         }
 
-        // =========================
-        // RANKING (QUALQUER LOGADO)
-        // =========================
-
+        // Ranking
         public async Task<IActionResult> Ranking()
         {
             if (!UsuarioLogado())
@@ -244,9 +160,45 @@ namespace EcoPoint.Controllers
             return View(usuarios);
         }
 
-        // =========================
-        // EXISTS
-        // =========================
+        // GET: Usuarios/CriarEmpresa
+        public IActionResult CriarEmpresa()
+        {
+            if (!Admin())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
+
+        // POST: Usuarios/CriarEmpresa
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CriarEmpresa(Usuario usuario)
+        {
+            if (!Admin())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            usuario.TipoUsuario = "Empresa";
+            usuario.Pontos = 0;
+            usuario.DataCadastro = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                _context.Usuarios.Add(usuario);
+
+                _context.SaveChanges();
+
+                TempData["Sucesso"] =
+                    "Empresa cadastrada com sucesso!";
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(usuario);
+        }
 
         private bool UsuarioExists(int id)
         {

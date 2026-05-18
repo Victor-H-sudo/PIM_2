@@ -1,25 +1,40 @@
-@model EcoPoint.ViewModels.LoginViewModel
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto"
+         style="max-width:400px;
+                border-radius:20px;
+                background-color:#F1FAEE;">
 
-<h2>Login</h2>
+        <h2 class="text-center mb-4"
+            style="color:#1D3557;">
+            Login
+        </h2>
 
-<form asp-action="Index">
+        <form method="post">
 
-    <div class="mb-3">
-        <label>Email</label>
-        <input asp-for="Email" class="form-control" />
+            <div class="mb-3">
+                <label>Email</label>
+
+                <input name="Email"
+                       class="form-control"
+                       style="border-radius:10px;" />
+            </div>
+
+            <div class="mb-3">
+                <label>Senha</label>
+
+                <input name="Senha"
+                       type="password"
+                       class="form-control"
+                       style="border-radius:10px;" />
+            </div>
+
+            <button type="submit"
+                    class="btn w-100"
+                    style="background-color:#2A9D8F;
+                           color:white;
+                           border-radius:12px;">
+                Entrar
+            </button>
+        </form>
     </div>
-
-    <div class="mb-3">
-        <label>Senha</label>
-        <input asp-for="Senha" type="password" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">
-        Entrar
-    </button>
-
-</form>
-
-<p style="color:red">
-    @ViewBag.Erro
-</p>
+</div>
