@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,45 +14,57 @@
     <header>
         <ul class="navbar-nav flex-grow-1">
 
-    <li class="nav-item">
-        <a class="nav-link text-dark"
-           asp-controller="Home"
-           asp-action="Index">
-           Home
-        </a>
-    </li>
+    @if (Context.Session.GetString("TipoUsuario") == "Admin")
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light"
+               asp-controller="Usuarios"
+               asp-action="Index">
+               Usuários
+            </a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link text-dark"
-           asp-controller="Usuarios"
-           asp-action="Index">
-           Usuários
-        </a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link text-light"
+               asp-controller="Ecopontos"
+               asp-action="Index">
+               Ecopontos
+            </a>
+        </li>
+    }
 
-    <li class="nav-item">
-        <a class="nav-link text-dark"
-           asp-controller="Ecopontos"
-           asp-action="Index">
-           Ecopontos
-        </a>
-    </li>
+    @if (Context.Session.GetString("TipoUsuario") == "Empresa")
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light"
+               asp-controller="Reciclagens"
+               asp-action="Index">
+               Reciclagens
+            </a>
+        </li>
+    }
 
-    <li class="nav-item">
-        <a class="nav-link text-dark"
-           asp-controller="Reciclagens"
-           asp-action="Index">
-           Reciclagens
-        </a>
-    </li>
+    @if (Context.Session.GetString("TipoUsuario") == "Usuario")
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light"
+               asp-controller="Usuarios"
+               asp-action="Ranking">
+               Ranking
+            </a>
+        </li>
+    }
 
-    <li class="nav-item">
-        <a class="nav-link text-dark"
-           asp-controller="Usuarios"
-           asp-action="Ranking">
-           Ranking
-        </a>
-    </li>
+    @if (Context.Session.GetString("UsuarioNome") != null)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light"
+               asp-controller="Login"
+               asp-action="Logout">
+               Sair
+            </a>
+        </li>
+    }
 
 </ul>
     </header>

@@ -14,7 +14,7 @@ namespace EcoPoint.Models
         
         [DataType(DataType.Password)]
         public string Senha { get; set; } = string.Empty;
-
+        public string TipoUsuario { get; set; } = "Usuario";        
         public int Pontos { get; set; } = 0;
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;

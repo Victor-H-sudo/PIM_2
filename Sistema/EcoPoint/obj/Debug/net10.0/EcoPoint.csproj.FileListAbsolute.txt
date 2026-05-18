@@ -336,3 +336,4 @@ C:\Users\Jonas\Documents\PIM_2\Sistema\EcoPoint\bin\Debug\net10.0\zh-Hant\Micros
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\am8m60jw7f-{0}-cr1u4ji0im-cr1u4ji0im.gz
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\rbtb98v9tm-{0}-cr1u4ji0im-cr1u4ji0im.gz
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\focvxqaxi4-{0}-q893d0cjgf-q893d0cjgf.gz
+C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\EcoPoint.sourcelink.json
