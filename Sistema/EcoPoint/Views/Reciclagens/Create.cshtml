@@ -1,0 +1,63 @@
+@model EcoPoint.Models.Reciclagem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Reciclagem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EcopontoId" class="control-label"></label>
+                <select asp-for="EcopontoId" class ="form-control" asp-items="ViewBag.EcopontoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoMaterialId" class="control-label"></label>
+                <select asp-for="TipoMaterialId" class ="form-control" asp-items="ViewBag.TipoMaterialId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Peso" class="control-label"></label>
+                <input asp-for="Peso" class="form-control" />
+                <span asp-validation-for="Peso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PontosGerados" class="control-label"></label>
+                <span asp-validation-for="PontosGerados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoMaterial" class="control-label"></label>
+                <input type="file" name="FotoMaterialFile" />
+                <span asp-validation-for="FotoMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPeso" class="control-label"></label>
+                <input type="file" name="FotoPesoFile" />
+                <span asp-validation-for="FotoPeso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

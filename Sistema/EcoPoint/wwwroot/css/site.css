@@ -1,0 +1,81 @@
+body {
+    background-color: #f7f7f5; /* fundo claro */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar simples */
+.navbar {
+    background-color: beige !important;
+    border-bottom: 2px solid #2e7d32;
+}
+
+/* Links */
+.nav-link {
+    color: #1e88e5 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #2e7d32 !important;
+}
+
+/* CARD BASE */
+.card {
+    background-color: #0d1b2a; /* azul escuro */
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.card h1,
+.card h2,
+.card h3,
+.card p {
+    color: #ffffff;
+}
+/* BOTÃO PRINCIPAL */
+.btn-primary {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* TABELAS (visual mais limpo) */
+table {
+    background: beige;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.rank-1 {
+    background-color: #2e7d32; /* verde */
+}
+
+.rank-2 {
+    background-color: #90caf9; /* azul claro */
+}
+
+.rank-3 {
+    background-color: #f5f5dc; /* bege */
+}
+
+.btn-primary {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}

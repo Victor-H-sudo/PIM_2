@@ -1,0 +1,6 @@
+USE PIM_2;
+GO
+
+ALTER TABLE Ecopontos
+ADD CNPJ CHAR(14);
+GO
