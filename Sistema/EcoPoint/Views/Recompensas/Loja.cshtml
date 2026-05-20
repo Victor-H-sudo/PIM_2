@@ -1,84 +1,105 @@
 @model IEnumerable<EcoPoint.Models.Recompensa>
 
-<h1>TESTE LOJA</h1>
 @{
-    ViewData["Title"] = "Recompensas";
+    ViewData["Title"] = "Loja de Recompensas";
 }
-@if (TempData["Erro"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["Erro"]
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold"
+            style="color:#1D3557;">
+            🎁 Loja de Recompensas
+        </h1>
+
+        <p class="lead"
+           style="color:#457B9D;">
+            Troque seus pontos por recompensas exclusivas.
+        </p>
+
     </div>
-}
 
-@if (TempData["Sucesso"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["Sucesso"]
-    </div>
-}
+    <div class="row g-4">
 
-<h2 class="text-white mb-4">🎁 Recompensas</h2>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
 
-@if (TempData["Erro"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["Erro"]
-    </div>
-}
+                <div class="card shadow border-0 h-100"
+                     style="border-radius:20px; overflow:hidden;">
 
-@if (TempData["Sucesso"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["Sucesso"]
-    </div>
-}
+                    @if (item.Nome.Contains("Gela"))
+                    {
+                        <div class="text-center p-4"
+                             style="background:linear-gradient(135deg,#FF006E,#FFD60A);">
 
-<div class="row">
-@foreach (var item in Model)
-{
-    var isGela = item.Nome == "Chaveiro Gela";
+                            <i class="fa-solid fa-key fa-4x text-white"></i>
 
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow" style="border-radius:20px; background-color:#F1FAEE;">
-            <div class="card-body text-center">
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center p-4"
+                             style="background-color:#2A9D8F;">
 
-                @if (isGela)
-                {
-                    <div style="width:80px; height:80px; border-radius:50%; background:#ff1493; color:#ffeb3b; display:flex; align-items:center; justify-content:center; font-size:36px; margin:0 auto 15px auto; font-weight:bold;">
-                        G
+                            <i class="fa-solid fa-gift fa-4x text-white"></i>
+
+                        </div>
+                    }
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h3 class="fw-bold"
+                            style="color:#1D3557;">
+                            @item.Nome
+                        </h3>
+
+                        <p class="text-muted">
+                            @item.Descricao
+                        </p>
+
+                        <div class="mt-auto">
+
+                            <div class="mb-3">
+
+                                <span class="badge fs-6 p-3"
+                                      style="background-color:#1D3557;">
+
+                                    ⭐ @item.PontosNecessarios pontos
+
+                                </span>
+
+                            </div>
+
+                            <form asp-controller="Recompensas"
+                                  asp-action="Resgatar"
+                                  method="post">
+
+                                <input type="hidden"
+                                       name="id"
+                                       value="@item.Id" />
+
+                                <button type="submit"
+                                        class="btn w-100 fw-bold text-dark"
+                                        style="background-color:#FFD60A;
+                                               border-radius:12px;">
+
+                                    Resgatar
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
                     </div>
-                }
-                else
-                {
-                    <div style="font-size:40px; margin-bottom:15px;">
-                        🎁
-                    </div>
-                }
 
-                <h4 style="color:#1D3557;">
-                    @item.Nome
-                </h4>
+                </div>
 
-                <p style="color:#333;">
-                    @item.Descricao
-                </p>
-
-                <h5 style="color:#2A9D8F;">
-                    @item.PontosNecessarios pontos
-                </h5>
             </div>
+        }
 
-            <div class="card-footer bg-transparent border-0">
-                <a asp-controller="Recompensas"
-                asp-action="Resgatar"
-                asp-route-id="@item.Id"
-                class="btn w-100"
-                style="background-color:#2A9D8F; color:white; border-radius:12px;">
-                    RESGATAR
-                </a>
-            </div>
-        </div>
     </div>
-}
+
 </div>

@@ -1,62 +1,97 @@
 @model IEnumerable<EcoPoint.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuários";
 }
 
-<h1>Index</h1>
+<div class="container mt-5">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CPF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pontos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataCadastro)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CPF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pontos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCadastro)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-            <a asp-action="CriarEmpresa"
-            class="btn btn-success mb-3">
-                Cadastrar Empresa
-            </a>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold" style="color:#1D3557;">
+                👥 Usuários
+            </h1>
+
+            <p style="color:#457B9D;">
+                Gerencie usuários e empresas cadastradas.
+            </p>
+        </div>
+
+        <a asp-action="CriarEmpresa"
+           class="btn fw-bold text-dark"
+           style="background-color:#FFD60A; border-radius:12px;">
+            + Cadastrar Empresa
+        </a>
+    </div>
+
+    <div class="card shadow border-0 p-4"
+         style="border-radius:20px; background-color:#FFFFFF;">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+                <tr style="color:#1D3557;">
+                    <th>Nome</th>
+                    <th>CPF / CNPJ</th>
+                    <th>Email</th>
+                    <th>Perfil</th>
+                    <th>Pontos</th>
+                    <th>Cadastro</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="fw-bold">@item.Nome</td>
+                        <td>@item.CPF</td>
+                        <td>@item.Email</td>
+
+                        <td>
+                            @if (item.TipoUsuario == "Admin")
+                            {
+                                <span class="badge bg-warning text-dark">Admin</span>
+                            }
+                            else if (item.TipoUsuario == "Empresa")
+                            {
+                                <span class="badge bg-success">Empresa</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-primary">Usuário</span>
+                            }
+                        </td>
+
+                        <td>
+                            <span class="badge"
+                                  style="background-color:#1D3557;">
+                                ⭐ @item.Pontos
+                            </span>
+                        </td>
+
+                        <td>@item.DataCadastro.ToShortDateString()</td>
+
+                        <td>
+                            <a asp-action="Detalhes"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-primary">
+                                Ver
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-danger">
+                                Remover
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -2,71 +2,149 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="container mt-4">
+<div class="container mt-5">
 
-    <div class="card shadow p-4 mb-4"
-         style="background-color:#F1FAEE; border-radius:20px;">
+    <div class="text-center mb-5">
 
-        <h2 style="color:#1D3557;">Bem-vindo ao EcoPoint</h2>
+        <h1 class="display-4 fw-bold"
+            style="color:#1D3557;">
+            ♻️ EcoPoint
+        </h1>
 
-        <p style="color:#333;">
-            Acesse rapidamente as principais áreas do sistema.
+        <p class="lead"
+           style="color:#457B9D;">
+            Transformando reciclagem em recompensas.
         </p>
+
     </div>
 
-    <div class="row">
-        <div class="col-md-4 mb-3">
-            <a asp-controller="Usuarios"
-               asp-action="Ranking"
-               class="btn w-100 p-4"
-               style="background-color:#2A9D8F; color:white; border-radius:18px; justify-content: center;">
-                🏆 Ranking
-            </a>
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card shadow h-100 border-0"
+                 style="border-radius:20px; background-color:#FFFFFF;">
+
+                <div class="card-body text-center">
+
+                    <i class="fa-solid fa-trophy fa-3x mb-3"
+                       style="color:#E9C46A;"></i>
+
+                    <h3 style="color:#1D3557;">
+                        Ranking
+                    </h3>
+
+                    <p>
+                        Veja os usuários com mais pontos acumulados.
+                    </p>
+
+                    <a asp-controller="Usuarios"
+                       asp-action="Ranking"
+                       class="btn btn-warning fw-bold">
+                        Ver Ranking
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="col-md-4 mb-3">
-            <a asp-controller="Recompensas"
-               asp-action="Loja"
-               class="btn w-100 p-4"
-               style="background-color:#1D3557; color:white; border-radius:18px; justify-content:center;">
-                🎁 Recompensas
-            </a>
+        <div class="col-md-4">
+
+            <div class="card shadow h-100 border-0"
+                 style="border-radius:20px; background-color:#FFFFFF;">
+
+                <div class="card-body text-center">
+
+                    <i class="fa-solid fa-gift fa-3x mb-3"
+                       style="color:#FF006E;"></i>
+
+                    <h3 style="color:#1D3557;">
+                        Recompensas
+                    </h3>
+
+                    <p>
+                        Troque seus pontos por prêmios exclusivos.
+                    </p>
+
+                    <a asp-controller="Recompensas"
+                       asp-action="Loja"
+                       class="btn fw-bold text-dark"
+                       style="background-color:#FFD60A;">
+                        Ir para Loja
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
         @if (Context.Session.GetString("TipoUsuario") == "Empresa"
-          || Context.Session.GetString("TipoUsuario") == "Admin")
+        || Context.Session.GetString("TipoUsuario") == "Admin")
         {
-            <div class="col-md-4 mb-3">
-                <a asp-controller="Reciclagens"
-                   asp-action="Index"
-                   class="btn w-100 p-4"
-                   style="background-color:#457B9D; color:white; border-radius:18px;">
-                    ♻ Reciclagens
-                </a>
-            </div>
-        }
+            <div class="col-md-4">
 
-        @if (Context.Session.GetString("TipoUsuario") == "Admin")
-        {
-            <div class="col-md-4 mb-3">
-                <a asp-controller="Usuarios"
-                   asp-action="Index"
-                   class="btn w-100 p-4"
-                   style="background-color:#E9C46A; color:#1D3557; border-radius:18px;">
-                    👑 Painel Admin
-                </a>
-            </div>
+                <div class="card shadow h-100 border-0"
+                     style="border-radius:20px; background-color:#FFFFFF;">
 
-            <div class="col-md-4 mb-3">
-                <a asp-controller="Recompensas"
-                   asp-action="Index"
-                   class="btn w-100 p-4"
-                   style="background-color:#F4A261; color:white; border-radius:18px;">
-                    ⚙ Gerenciar Recompensas
-                </a>
+                    <div class="card-body text-center">
+
+                        <i class="fa-solid fa-recycle fa-3x mb-3"
+                           style="color:#2A9D8F;"></i>
+
+                        <h3 style="color:#1D3557;">
+                            Reciclagens
+                        </h3>
+
+                        <p>
+                            Cadastre reciclagens e gere pontos.
+                        </p>
+
+                        <a asp-controller="Reciclagens"
+                           asp-action="Create"
+                           class="btn btn-success fw-bold">
+                            Nova Reciclagem
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
         }
 
     </div>
+
+    @if (Context.Session.GetString("TipoUsuario") == "Admin")
+    {
+        <div class="mt-5">
+
+            <div class="card shadow border-0"
+                 style="border-radius:20px; background-color:#1D3557;">
+
+                <div class="card-body text-center text-light">
+
+                    <h3>
+                        Painel Administrativo
+                    </h3>
+
+                    <p>
+                        Gerencie usuários, empresas e recompensas.
+                    </p>
+
+                    <a asp-controller="Usuarios"
+                       asp-action="Index"
+                       class="btn btn-warning fw-bold">
+                        Abrir Painel
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
 
 </div>
