@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EcoPoint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aab35e0748efbdce8b0f55958589cb49fe6390ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d45dca99a26080dfa07caa5056f3f7fb0dc68f6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EcoPoint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EcoPoint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

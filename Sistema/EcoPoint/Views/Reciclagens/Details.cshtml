@@ -1,65 +1,57 @@
 @model EcoPoint.Models.Reciclagem
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Reciclagem";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
 
-<div>
-    <h4>Reciclagem</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.CPF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ecoponto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ecoponto.CNPJ)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoMaterial)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoMaterial.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Peso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Peso)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PontosGerados)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PontosGerados)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Data)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Data)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FotoMaterial)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FotoMaterial)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FotoPeso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FotoPeso)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="card shadow border-0 p-5"
+         style="border-radius:20px;">
+
+        <h1 class="fw-bold mb-4"
+            style="color:#1D3557;">
+            ♻️ Detalhes da Reciclagem
+        </h1>
+
+        <div class="mb-3">
+            <strong>Usuário:</strong>
+            @(Model.Usuario?.Nome ?? "Não informado")
+        </div>
+
+        <div class="mb-3">
+            <strong>Ecoponto:</strong>
+            @(Model.Ecoponto?.Nome ?? "Não informado")
+        </div>
+
+        <div class="mb-3">
+            <strong>Material:</strong>
+            @(Model.TipoMaterial?.Nome ?? "Não informado")
+        </div>
+
+        <div class="mb-3">
+            <strong>Peso:</strong>
+            @Model.Peso kg
+        </div>
+
+        <div class="mb-3">
+            <strong>Pontos gerados:</strong>
+            <span class="badge"
+                  style="background-color:#1D3557;">
+                ⭐ @Model.PontosGerados
+            </span>
+        </div>
+
+        <div class="mb-4">
+            <strong>Data:</strong>
+            @Model.Data.ToString("dd/MM/yyyy")
+        </div>
+
+        <a asp-action="Index"
+           class="btn btn-outline-secondary">
+            Voltar
+        </a>
+
+    </div>
+
 </div>

@@ -1,76 +1,96 @@
 @model IEnumerable<EcoPoint.Models.Reciclagem>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Reciclagens";
 }
 
-<h1>Index</h1>
+<div class="container mt-5">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ecoponto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoMaterial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Peso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PontosGerados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Data)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FotoMaterial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FotoPeso)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.CPF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ecoponto.CNPJ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoMaterial.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PontosGerados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoMaterial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoPeso)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold" style="color:#1D3557;">
+                ♻️ Reciclagens
+            </h1>
+
+            <p style="color:#457B9D;">
+                Registre e acompanhe as reciclagens realizadas.
+            </p>
+        </div>
+
+        <a asp-action="Create"
+           class="btn fw-bold text-white"
+           style="background-color:#2A9D8F; border-radius:12px;">
+            + Nova Reciclagem
+        </a>
+    </div>
+
+    <div class="card shadow border-0 p-4"
+         style="border-radius:20px; background-color:#FFFFFF;">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+                <tr style="color:#1D3557;">
+                    <th>Usuário</th>
+                    <th>Ecoponto</th>
+                    <th>Material</th>
+                    <th>Peso</th>
+                    <th>Pontos</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="fw-bold">
+                            @(item.Usuario?.Nome ?? "Não informado")
+                        </td>
+
+                        <td>
+                            @(item.Ecoponto?.Nome ?? "Não informado")
+                        </td>
+
+                        <td>
+                            @(item.TipoMaterial?.Nome ?? "Não informado")
+                        </td>
+
+                        <td>
+                            @item.Peso kg
+                        </td>
+
+                        <td>
+                            <span class="badge"
+                                  style="background-color:#1D3557;">
+                                ⭐ @item.PontosGerados
+                            </span>
+                        </td>
+
+                        <td>
+                            @item.Data.ToString("dd/MM/yyyy")
+                        </td>
+
+                        <td>
+                            <a asp-action="Details"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-primary">
+                                Ver
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-danger">
+                                Remover
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

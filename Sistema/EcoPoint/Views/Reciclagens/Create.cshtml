@@ -1,63 +1,132 @@
 @model EcoPoint.Models.Reciclagem
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nova Reciclagem";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
 
-<h4>Reciclagem</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UsuarioId" class="control-label"></label>
-                <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow border-0"
+                 style="border-radius:20px;">
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <h1 class="fw-bold"
+                            style="color:#1D3557;">
+                            ♻️ Nova Reciclagem
+                        </h1>
+
+                        <p style="color:#457B9D;">
+                            Registre materiais reciclados e gere pontos.
+                        </p>
+
+                    </div>
+
+                    <form asp-action="Create">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="UsuarioId"
+                                   class="form-label fw-bold">
+                                Usuário
+                            </label>
+
+                            <select asp-for="UsuarioId"
+                                    class="form-select"
+                                    asp-items="ViewBag.UsuarioId">
+                            </select>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="EcopontoId"
+                                   class="form-label fw-bold">
+                                Ecoponto
+                            </label>
+
+                            <select asp-for="EcopontoId"
+                                    class="form-select"
+                                    asp-items="ViewBag.EcopontoId">
+                            </select>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="TipoMaterialId"
+                                   class="form-label fw-bold">
+                                Tipo de Material
+                            </label>
+
+                            <select asp-for="TipoMaterialId"
+                                    class="form-select"
+                                    asp-items="ViewBag.TipoMaterialId">
+                            </select>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Peso"
+                                   class="form-label fw-bold">
+                                Peso (kg)
+                            </label>
+
+                            <input asp-for="Peso"
+                                   class="form-control"
+                                   placeholder="Digite o peso reciclado" />
+
+                            <span asp-validation-for="Peso"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="d-grid gap-3">
+
+                            <button type="submit"
+                                    class="btn btn-lg fw-bold text-white"
+                                    style="background-color:#2A9D8F;
+                                           border-radius:12px;">
+
+                                Registrar Reciclagem
+
+                            </button>
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+
+                                Voltar
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="EcopontoId" class="control-label"></label>
-                <select asp-for="EcopontoId" class ="form-control" asp-items="ViewBag.EcopontoId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="TipoMaterialId" class="control-label"></label>
-                <select asp-for="TipoMaterialId" class ="form-control" asp-items="ViewBag.TipoMaterialId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Peso" class="control-label"></label>
-                <input asp-for="Peso" class="form-control" />
-                <span asp-validation-for="Peso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PontosGerados" class="control-label"></label>
-                <span asp-validation-for="PontosGerados" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <span asp-validation-for="Data" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FotoMaterial" class="control-label"></label>
-                <input type="file" name="FotoMaterialFile" />
-                <span asp-validation-for="FotoMaterial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FotoPeso" class="control-label"></label>
-                <input type="file" name="FotoPesoFile" />
-                <span asp-validation-for="FotoPeso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+        </div>
+
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

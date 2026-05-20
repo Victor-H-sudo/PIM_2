@@ -1,45 +1,77 @@
 @model IEnumerable<EcoPoint.Models.Recompensa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gerenciar Recompensas";
 }
 
-<h1>Index</h1>
+<div class="container mt-5">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PontosNecessarios)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PontosNecessarios)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold" style="color:#1D3557;">
+                🎁 Recompensas
+            </h1>
+
+            <p style="color:#457B9D;">
+                Gerencie os prêmios disponíveis para resgate.
+            </p>
+        </div>
+
+        <a asp-action="Create"
+           class="btn fw-bold text-dark"
+           style="background-color:#FFD60A; border-radius:12px;">
+            + Nova Recompensa
+        </a>
+    </div>
+
+    <div class="card shadow border-0 p-4"
+         style="border-radius:20px; background-color:#FFFFFF;">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+                <tr style="color:#1D3557;">
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Pontos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="fw-bold">@item.Nome</td>
+
+                        <td>@item.Descricao</td>
+
+                        <td>
+                            <span class="badge"
+                                  style="background-color:#1D3557;">
+                                ⭐ @item.PontosNecessarios
+                            </span>
+                        </td>
+
+                        <td>
+                            <a asp-action="Details"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-primary">
+                                Ver
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-danger">
+                                Remover
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

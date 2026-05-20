@@ -38,27 +38,27 @@ namespace EcoPoint.Controllers
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
-        {
-            if (!UsuarioLogado())
-            {
-                return RedirectToAction("Index", "Login");
-            }
+{
+    if (!UsuarioLogado())
+    {
+        return RedirectToAction("Index", "Login");
+    }
 
-            if (id == null)
-            {
-                return NotFound();
-            }
+    if (id == null)
+    {
+        return NotFound();
+    }
 
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.Id == id);
+    var usuario = await _context.Usuarios
+        .FirstOrDefaultAsync(u => u.Id == id);
 
-            if (usuario == null)
-            {
-                return NotFound();
-            }
+    if (usuario == null)
+    {
+        return NotFound();
+    }
 
-            return View(usuario);
-        }
+    return View(usuario);
+}
 
         // GET: Usuarios/Create
         public IActionResult Create()

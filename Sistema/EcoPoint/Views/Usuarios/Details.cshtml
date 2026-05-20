@@ -1,53 +1,77 @@
 @model EcoPoint.Models.Usuario
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Usuário";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
 
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CPF)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CPF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Senha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Senha)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pontos)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pontos)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="card shadow border-0 p-5"
+         style="border-radius:20px;">
+
+        <h1 class="fw-bold mb-4"
+            style="color:#1D3557;">
+
+            👤 Detalhes do Usuário
+
+        </h1>
+
+        <div class="mb-3">
+
+            <strong>Nome:</strong>
+            @Model.Nome
+
+        </div>
+
+        <div class="mb-3">
+
+            <strong>CPF / CNPJ:</strong>
+            @Model.CPF
+
+        </div>
+
+        <div class="mb-3">
+
+            <strong>Email:</strong>
+            @Model.Email
+
+        </div>
+
+        <div class="mb-3">
+
+            <strong>Perfil:</strong>
+            @Model.TipoUsuario
+
+        </div>
+
+        <div class="mb-3">
+
+            <strong>Pontos:</strong>
+
+            <span class="badge"
+                  style="background-color:#1D3557;">
+
+                ⭐ @Model.Pontos
+
+            </span>
+
+        </div>
+
+        <div class="mb-4">
+
+            <strong>Data de Cadastro:</strong>
+
+            @Model.DataCadastro.ToString("dd/MM/yyyy")
+
+        </div>
+
+        <a asp-action="Index"
+           class="btn btn-outline-secondary">
+
+            Voltar
+
+        </a>
+
+    </div>
+
 </div>

@@ -1,40 +1,125 @@
-<div class="container mt-5">
-    <div class="card shadow p-4 mx-auto"
-         style="max-width:400px;
-                border-radius:20px;
-                background-color:#F1FAEE;">
+@model EcoPoint.Models.Usuario
 
-        <h2 class="text-center mb-4"
-            style="color:#1D3557;">
-            Login
-        </h2>
+@{
+    Layout = null;
+}
 
-        <form method="post">
+<!DOCTYPE html>
 
-            <div class="mb-3">
-                <label>Email</label>
+<html lang="pt-br">
 
-                <input name="Email"
-                       class="form-control"
-                       style="border-radius:10px;" />
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>Login - EcoPoint</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body style="
+      background:linear-gradient(135deg,#F1FAEE,#A8DADC);
+      min-height:100vh;">
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center"
+             style="min-height:100vh;">
+
+            <div class="col-md-5">
+
+                <div class="card shadow-lg border-0"
+                     style="border-radius:25px; overflow:hidden;">
+
+                    <div class="text-center p-4"
+                         style="background-color:#1D3557;">
+
+                        <h1 class="text-white fw-bold mb-0">
+                            ♻️ EcoPoint
+                        </h1>
+
+                        <p class="text-light mt-2 mb-0">
+                            Sistema de reciclagem inteligente
+                        </p>
+
+                    </div>
+
+                    <div class="card-body p-5">
+
+                        <h3 class="text-center fw-bold mb-4"
+                            style="color:#1D3557;">
+                            Entrar
+                        </h3>
+
+                        @if (ViewBag.Erro != null)
+                        {
+                            <div class="alert alert-danger text-center">
+                                @ViewBag.Erro
+                            </div>
+                        }
+
+                        <form asp-action="Index"
+                              method="post">
+
+                            <div class="mb-4">
+
+                                <label class="form-label fw-bold">
+                                    Email
+                                </label>
+
+                                <input name="email"
+                                       class="form-control"
+                                       placeholder="Digite seu email" />
+
+                            </div>
+
+                            <div class="mb-4">
+
+                                <label class="form-label fw-bold">
+                                    Senha
+                                </label>
+
+                                <input type="password"
+                                       name="senha"
+                                       class="form-control"
+                                       placeholder="Digite sua senha" />
+
+                            </div>
+
+                            <div class="d-grid">
+
+                                <button type="submit"
+                                        class="btn btn-lg fw-bold text-white"
+                                        style="background-color:#2A9D8F;
+                                               border-radius:12px;">
+
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                    Entrar
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="mb-3">
-                <label>Senha</label>
+        </div>
 
-                <input name="Senha"
-                       type="password"
-                       class="form-control"
-                       style="border-radius:10px;" />
-            </div>
-
-            <button type="submit"
-                    class="btn w-100"
-                    style="background-color:#2A9D8F;
-                           color:white;
-                           border-radius:12px;">
-                Entrar
-            </button>
-        </form>
     </div>
-</div>
+
+</body>
+
+</html>

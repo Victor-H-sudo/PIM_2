@@ -1,81 +1,102 @@
+html {
+    font-size: 14px;
+}
+
 body {
-    background-color: #f7f7f5; /* fundo claro */
-    font-family: Arial, sans-serif;
+    background-color: #F1FAEE;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* Navbar simples */
+/* TITULOS */
+
+h1, h2, h3, h4, h5 {
+    color: #2A9D8F;
+}
+
+/* NAVBAR */
+
 .navbar {
-    background-color: beige !important;
-    border-bottom: 2px solid #2e7d32;
+    background-color: #2A9D8F !important;
+    transition: 0.3s;
 }
 
-/* Links */
 .nav-link {
-    color: #1e88e5 !important;
     font-weight: 500;
+    transition: 0.2s;
 }
 
 .nav-link:hover {
-    color: #2e7d32 !important;
+    transform: translateY(-1px);
+    opacity: 0.9;
 }
 
-/* CARD BASE */
+/* CARDS */
+
 .card {
-    background-color: #0d1b2a; /* azul escuro */
+    border-radius: 20px !important;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* BOTÕES */
+
+.btn {
     border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-.card h1,
-.card h2,
-.card h3,
-.card p {
-    color: #ffffff;
-}
-/* BOTÃO PRINCIPAL */
-.btn-primary {
-    background-color: #2e7d32;
-    border-color: #2e7d32;
-    width: 100%;
     font-weight: bold;
+    transition: 0.2s;
 }
 
-.btn-primary:hover {
-    background-color: #1b5e20;
+.btn:hover {
+    transform: scale(1.02);
 }
 
-/* TÍTULOS */
-h1, h2, h3 {
-    font-weight: bold;
-    color: #2e7d32;
+/* TABELAS */
+
+.table th {
+    border-top: none;
 }
 
-/* TABELAS (visual mais limpo) */
-table {
-    background: beige;
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* BADGES */
+
+.badge {
+    padding: 10px 14px;
     border-radius: 10px;
-    overflow: hidden;
-}
-.rank-1 {
-    background-color: #2e7d32; /* verde */
 }
 
-.rank-2 {
-    background-color: #90caf9; /* azul claro */
+/* FORMULÁRIOS */
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    padding: 10px;
 }
 
-.rank-3 {
-    background-color: #f5f5dc; /* bege */
+.form-control:focus,
+.form-select:focus {
+    border-color: #2A9D8F;
+    box-shadow: 0 0 0 0.15rem rgba(42, 157, 143, 0.25);
 }
 
-.btn-primary {
-    background-color: #2e7d32;
-    border-color: #2e7d32;
-    width: 100%;
-    font-weight: bold;
+/* ALERTAS */
+
+.alert {
+    border-radius: 12px;
+    border: none;
 }
 
-.btn-primary:hover {
-    background-color: #1b5e20;
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: #777;
 }

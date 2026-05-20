@@ -262,7 +262,6 @@ C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\rjsmcshtml.dsw
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\scopedcss\bundle\EcoPoint.styles.css
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\scopedcss\projectbundle\EcoPoint.bundle.scp.css
-C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\focvxqaxi4-{0}-q893d0cjgf-q893d0cjgf.gz
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\0a34asi4pq-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\623e7nxpn7-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\bw9e8k7ipr-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -337,3 +336,4 @@ C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\refint\EcoPoin
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\EcoPoint.pdb
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\EcoPoint.genruntimeconfig.cache
 C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\ref\EcoPoint.dll
+C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\obj\Debug\net10.0\compressed\focvxqaxi4-{0}-9i38jk0gqg-9i38jk0gqg.gz

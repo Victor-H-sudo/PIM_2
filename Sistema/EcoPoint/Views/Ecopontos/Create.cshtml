@@ -1,58 +1,138 @@
 @model EcoPoint.Models.Ecoponto
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Novo Ecoponto";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
 
-<h4>Ecoponto</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow border-0"
+                 style="border-radius:20px;">
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <h1 class="fw-bold"
+                            style="color:#1D3557;">
+                            🏢 Novo Ecoponto
+                        </h1>
+
+                        <p style="color:#457B9D;">
+                            Cadastre um novo parceiro de coleta.
+                        </p>
+
+                    </div>
+
+                    <form asp-action="Create">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Nome"
+                                   class="form-label fw-bold">
+                                Nome
+                            </label>
+
+                            <input asp-for="Nome"
+                                   class="form-control"
+                                   placeholder="Digite o nome do ecoponto" />
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="CNPJ"
+                                   class="form-label fw-bold">
+                                CNPJ
+                            </label>
+
+                            <input asp-for="CNPJ"
+                                   class="form-control"
+                                   placeholder="Digite o CNPJ" />
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Email"
+                                   class="form-label fw-bold">
+                                Email
+                            </label>
+
+                            <input asp-for="Email"
+                                   class="form-control"
+                                   placeholder="Digite o email" />
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Endereco"
+                                   class="form-label fw-bold">
+                                Endereço
+                            </label>
+
+                            <input asp-for="Endereco"
+                                   class="form-control"
+                                   placeholder="Digite o endereço" />
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="LinkMaps"
+                                   class="form-label fw-bold">
+                                Link Google Maps
+                            </label>
+
+                            <input asp-for="LinkMaps"
+                                   class="form-control"
+                                   placeholder="Cole o link do Maps" />
+
+                        </div>
+
+                        <div class="d-grid gap-3">
+
+                            <button type="submit"
+                                    class="btn btn-lg fw-bold text-white"
+                                    style="background-color:#2A9D8F;
+                                           border-radius:12px;">
+
+                                Salvar Ecoponto
+
+                            </button>
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+
+                                Voltar
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="CNPJ" class="control-label"></label>
-                <input asp-for="CNPJ" class="form-control" />
-                <span asp-validation-for="CNPJ" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Endereco" class="control-label"></label>   
-                <input asp-for="Endereco" class="form-control" />
-                <span asp-validation-for="Endereco" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LinkMaps" class="control-label"></label>
-                <input asp-for="LinkMaps" class="form-control" />
-                <span asp-validation-for="LinkMaps" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+        </div>
+
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -74,9 +74,10 @@
                         <td>@item.DataCadastro.ToShortDateString()</td>
 
                         <td>
-                            <a asp-action="Detalhes"
-                               asp-route-id="@item.Id"
-                               class="btn btn-sm btn-outline-primary">
+                            <a asp-controller="Usuarios"
+                            asp-action="Details"
+                            asp-route-id="@item.Id"
+                            class="btn btn-sm btn-outline-primary">
                                 Ver
                             </a>
 

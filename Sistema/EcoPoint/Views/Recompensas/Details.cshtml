@@ -1,35 +1,88 @@
 @model EcoPoint.Models.Recompensa
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Recompensa";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
 
-<div>
-    <h4>Recompensa</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PontosNecessarios)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PontosNecessarios)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow border-0"
+                 style="border-radius:20px; overflow:hidden;">
+
+                @if (Model.Nome.Contains("Gela"))
+                {
+                    <div class="text-center p-5"
+                         style="background:linear-gradient(135deg,#FF006E,#FFD60A);">
+
+                        <i class="fa-solid fa-key fa-5x text-white"></i>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center p-5"
+                         style="background-color:#2A9D8F;">
+
+                        <i class="fa-solid fa-gift fa-5x text-white"></i>
+
+                    </div>
+                }
+
+                <div class="card-body p-5">
+
+                    <h1 class="fw-bold mb-4"
+                        style="color:#1D3557;">
+                        @Model.Nome
+                    </h1>
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold">
+                            Descrição
+                        </h5>
+
+                        <p class="text-muted">
+                            @Model.Descricao
+                        </p>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold">
+                            Pontos necessários
+                        </h5>
+
+                        <span class="badge fs-5 p-3"
+                              style="background-color:#1D3557;">
+
+                            ⭐ @Model.PontosNecessarios pontos
+
+                        </span>
+
+                    </div>
+
+                    <div class="d-grid gap-3">
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+
+                            Voltar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

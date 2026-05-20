@@ -1,54 +1,128 @@
 @model EcoPoint.Models.Ecoponto
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Ecoponto";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
 
-<div>
-    <h4>Ecoponto</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CNPJ)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CNPJ)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Endereco)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Senha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Senha)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LinkMaps)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LinkMaps)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow border-0"
+                 style="border-radius:20px; overflow:hidden;">
+
+                <div class="text-center p-5"
+                     style="background-color:#2A9D8F;">
+
+                    <i class="fa-solid fa-building fa-5x text-white"></i>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <h1 class="fw-bold mb-5 text-center"
+                        style="color:#1D3557;">
+
+                        🏢 Detalhes do Ecoponto
+
+                    </h1>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-4">
+
+                            <h5 class="fw-bold">
+                                Nome
+                            </h5>
+
+                            <p class="text-muted">
+                                @Model.Nome
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <h5 class="fw-bold">
+                                CNPJ
+                            </h5>
+
+                            <p class="text-muted">
+                                @Model.CNPJ
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <h5 class="fw-bold">
+                                Email
+                            </h5>
+
+                            <p class="text-muted">
+                                @Model.Email
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <h5 class="fw-bold">
+                                Endereço
+                            </h5>
+
+                            <p class="text-muted">
+                                @Model.Endereco
+                            </p>
+
+                        </div>
+
+                        <div class="col-12 mb-4">
+
+                            <h5 class="fw-bold">
+                                Google Maps
+                            </h5>
+
+                            @if (!string.IsNullOrEmpty(Model.LinkMaps))
+                            {
+                                <a href="@Model.LinkMaps"
+                                   target="_blank"
+                                   class="btn btn-success">
+
+                                    Abrir localização
+
+                                </a>
+                            }
+                            else
+                            {
+                                <p class="text-muted">
+                                    Não informado.
+                                </p>
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-grid mt-4">
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+
+                            Voltar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

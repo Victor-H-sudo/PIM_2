@@ -1,43 +1,126 @@
 @model EcoPoint.Models.Recompensa
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nova Recompensa";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
 
-<h4>Recompensa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow border-0"
+                 style="border-radius:20px;">
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <h1 class="fw-bold"
+                            style="color:#1D3557;">
+                            🎁 Nova Recompensa
+                        </h1>
+
+                        <p style="color:#457B9D;">
+                            Cadastre recompensas disponíveis na loja.
+                        </p>
+
+                    </div>
+
+                    <form asp-action="Create">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Nome"
+                                   class="form-label fw-bold">
+                                Nome da recompensa
+                            </label>
+
+                            <input asp-for="Nome"
+                                   class="form-control"
+                                   placeholder="Ex: Chaveiro Gela" />
+
+                            <span asp-validation-for="Nome"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Descricao"
+                                   class="form-label fw-bold">
+                                Descrição
+                            </label>
+
+                            <textarea asp-for="Descricao"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Descreva a recompensa">
+                            </textarea>
+
+                            <span asp-validation-for="Descricao"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="PontosNecessarios"
+                                   class="form-label fw-bold">
+                                Pontos necessários
+                            </label>
+
+                            <input asp-for="PontosNecessarios"
+                                   class="form-control"
+                                   placeholder="1000" />
+
+                            <span asp-validation-for="PontosNecessarios"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="d-grid gap-3">
+
+                            <button type="submit"
+                                    class="btn btn-lg fw-bold text-dark"
+                                    style="background-color:#FFD60A;
+                                           border-radius:12px;">
+
+                                Salvar Recompensa
+
+                            </button>
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+
+                                Voltar
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PontosNecessarios" class="control-label"></label>
-                <input asp-for="PontosNecessarios" class="form-control" />
-                <span asp-validation-for="PontosNecessarios" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+        </div>
+
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
