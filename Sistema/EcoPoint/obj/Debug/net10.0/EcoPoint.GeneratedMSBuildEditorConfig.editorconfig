@@ -19,137 +19,137 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = EcoPoint
 build_property.RootNamespace = EcoPoint
-build_property.ProjectDir = C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint\
+build_property.ProjectDir = C:\Users\Jonas\Documents\PIM_2\Sistema\EcoPoint\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Jonas\Documents\PIM_2\Sistema\ecopoint
+build_property.MSBuildProjectDirectory = C:\Users\Jonas\Documents\PIM_2\Sistema\EcoPoint
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Ecopontos/Create.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Ecopontos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvcG9udG9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Ecopontos/Delete.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Ecopontos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvcG9udG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Ecopontos/Details.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Ecopontos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvcG9udG9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Ecopontos/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Ecopontos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvcG9udG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Home/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Home/Privacy.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Login/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Reciclagens/Create.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Reciclagens/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaWNsYWdlbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Reciclagens/Delete.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Reciclagens/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaWNsYWdlbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Reciclagens/Details.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Reciclagens/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaWNsYWdlbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Reciclagens/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Reciclagens/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaWNsYWdlbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Recompensas/Create.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Recompensas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21wZW5zYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Recompensas/Delete.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Recompensas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21wZW5zYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Recompensas/Details.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Recompensas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21wZW5zYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Recompensas/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Recompensas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21wZW5zYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Recompensas/Loja.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Recompensas/Loja.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21wZW5zYXNcTG9qYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Shared/Error.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/TiposMaterial/Create.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/TiposMaterial/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NNYXRlcmlhbFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/TiposMaterial/Delete.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/TiposMaterial/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NNYXRlcmlhbFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/TiposMaterial/Details.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/TiposMaterial/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NNYXRlcmlhbFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/TiposMaterial/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/TiposMaterial/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NNYXRlcmlhbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Usuarios/Create.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Usuarios/CriarEmpresa.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Usuarios/CriarEmpresa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JpYXJFbXByZXNhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Usuarios/Delete.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Usuarios/Details.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Usuarios/Index.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Usuarios/Ranking.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Usuarios/Ranking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcUmFua2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/_ViewImports.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/_ViewStart.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonas/Documents/PIM_2/Sistema/ecopoint/Views/Shared/_Layout.cshtml]
+[C:/Users/Jonas/Documents/PIM_2/Sistema/EcoPoint/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zwfiwkwy0q

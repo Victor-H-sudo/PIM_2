@@ -6134,11 +6134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+      "projectUniqueName": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
       "projectName": "EcoPoint",
-      "projectPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+      "projectPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
       "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\obj\\",
+      "outputPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jonas\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iklKDT+LN4s=",
+  "dgSpecHash": "CsaAqDBONSg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+  "projectFilePath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonas\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Jonas\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -134,9 +134,9 @@
       "code": "NU1901",
       "level": "Warning",
       "message": "O pacote 'NuGet.Packaging' 6.12.1 tem uma baixa vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
-      "projectPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+      "projectPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+      "filePath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
       "libraryId": "NuGet.Packaging",
       "targetGraphs": [
         "net10.0"
@@ -146,9 +146,9 @@
       "code": "NU1901",
       "level": "Warning",
       "message": "O pacote 'NuGet.Protocol' 6.12.1 tem uma baixa vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
-      "projectPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+      "projectPath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\ecopoint\\EcoPoint.csproj",
+      "filePath": "C:\\Users\\Jonas\\Documents\\PIM_2\\Sistema\\EcoPoint\\EcoPoint.csproj",
       "libraryId": "NuGet.Protocol",
       "targetGraphs": [
         "net10.0"
