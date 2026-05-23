@@ -30,7 +30,7 @@ namespace EcoPoint.Controllers
             if (usuario == null)
             {
                 ViewBag.Erro = "Usuário ou senha inválidos";
-                return View();
+                return View(model);
             }
 
             HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
